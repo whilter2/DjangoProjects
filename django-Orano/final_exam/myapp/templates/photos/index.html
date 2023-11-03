@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Photos {% endblock %}
+
+{% block content %}
+<main role="main">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Photos</h1>
+            <p>This is a template for a simple marketing or informational website. It includes a large callout called a
+                jumbotron and three supporting pieces of content. Use it as a starting point to create something more
+                unique.</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Test Data</h1>
+        <div class="row">
+            {% for i in photos %}
+                <div class="col-lg-3 mb-2">
+                    <div class="card">
+                        <img src="{{ i.url }}" class="card-img-top" alt="{{ i.title }}" style="height: 200px;">
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">{{ i.title }}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div> 
+    <hr />
+</main>
+{% endblock %}
